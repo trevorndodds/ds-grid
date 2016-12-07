@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gridApp1", "gridApp1\gridApp1.csproj", "{C0945950-A8BF-492D-A2E0-302FD2774C20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridAppService", "GridAppService\GridAppService.csproj", "{1E9EC40E-E314-46F0-A5E6-F877301DC732}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0945950-A8BF-492D-A2E0-302FD2774C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0945950-A8BF-492D-A2E0-302FD2774C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0945950-A8BF-492D-A2E0-302FD2774C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0945950-A8BF-492D-A2E0-302FD2774C20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E9EC40E-E314-46F0-A5E6-F877301DC732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E9EC40E-E314-46F0-A5E6-F877301DC732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E9EC40E-E314-46F0-A5E6-F877301DC732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E9EC40E-E314-46F0-A5E6-F877301DC732}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
