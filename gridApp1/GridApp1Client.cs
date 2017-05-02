@@ -12,6 +12,9 @@ namespace gridApp1
 {
     class GridApp1Client
     {
+        static Dictionary<int, string> resultMap;
+        static Dictionary<string, List<double>> serverMap;
+        
         static void Main(string[] args)
         {
             String service = "GridAppService";
@@ -44,7 +47,9 @@ namespace gridApp1
             DriverManager.SetProperty("DSPrimaryDirector", pdirector);
             DriverManager.SetProperty("DSSecondaryDirector", pdirector);
 
-
+            //Results
+            resultMap = new Dictionary<int, string>();
+            
             responseHandler handler = new responseHandler();
             try
             {
@@ -67,6 +72,37 @@ namespace gridApp1
              //       throw;
             }
 
+            Console.WriteLine("\n==================================================================================");
+
+            serverMap = new Dictionary<string, List<double>>();
+
+            foreach (KeyValuePair<int, string> entry in resultMap)
+            {
+                string server = (entry.Value.Split('-')[0]);
+                double time = double.Parse(entry.Value.Split(' ')[5]);
+                if (serverMap.ContainsKey(server))
+                {
+                    serverMap[server].Add( time );
+                }
+                else
+                {
+                    serverMap[server] = new List<double> { time };
+                }
+                // Console.WriteLine(server + " " + time);
+            }
+
+            Console.WriteLine("Total Servers Run Against: "+  serverMap.Count + "\n");
+            foreach (KeyValuePair<string, List<double>> entry in serverMap)
+            {
+                Console.Write(entry.Key + " - Tasks: (" + entry.Value.Count +") - " );
+                Console.WriteLine("Avg Calc Time: " + string.Format("{0:N6}",  entry.Value.Average()));
+                //foreach (var id in entry.Value)
+                //{
+                //    Console.WriteLine("     " + id);
+
+                //}
+
+            }
 
         }
 
@@ -83,6 +119,7 @@ namespace gridApp1
             public void HandleResponse(object response, int id)
             {
                 Console.WriteLine((++handled) + " - Result for request #" + id + ", " + response);
+                resultMap[id] = response.ToString();                
             }
         }
     }
